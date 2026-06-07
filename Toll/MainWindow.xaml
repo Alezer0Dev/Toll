@@ -1,0 +1,38 @@
+﻿<Window x:Class="Toll.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Toll"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="txtLicensePlate" HorizontalAlignment="Left" Margin="120,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" TextChanged="txtLicensePlate_TextChanged"/>
+        <Label Content="Numero di targa" HorizontalAlignment="Left" Margin="70,49,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tratta percorsa" HorizontalAlignment="Left" Margin="70,103,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboRoute" HorizontalAlignment="Left" Margin="70,134,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSubmit" Content="Conferma" HorizontalAlignment="Left" Margin="70,252,0,0" VerticalAlignment="Top" Width="120" Click="btnSubmit_Click"/>
+        <TabControl Margin="380,10,10,10">
+            <TabItem Header="Cronologia passaggi">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="gridAccessHistory" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Targhe rilevate">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="gridAllUsers" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Utenti Telepass">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="gridTelepassUsers" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ComboBox x:Name="comboCountryCode" HorizontalAlignment="Left" Margin="70,78,0,0" VerticalAlignment="Top" Width="45" SelectionChanged="comboCountryCode_SelectionChanged"/>
+        <RadioButton x:Name="radioCash" Content="Contanti" HorizontalAlignment="Left" Margin="70,192,0,0" VerticalAlignment="Top" GroupName="paymentMethod" Cursor=""/>
+        <RadioButton x:Name="radioCard" Content="Carta" HorizontalAlignment="Left" Margin="70,212,0,0" VerticalAlignment="Top" GroupName="paymentMethod" Cursor=""/>
+        <RadioButton x:Name="radioTelepass" Content="Telepass" HorizontalAlignment="Left" Margin="70,232,0,0" VerticalAlignment="Top" GroupName="paymentMethod" Cursor="" IsEnabled="False"/>
+        <Label Content="Metodo di pagamento" HorizontalAlignment="Left" Margin="70,161,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
